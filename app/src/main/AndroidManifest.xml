@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.huawei.mlkit.App">
+
+    <meta-data
+        android:name="com.huawei.hms.ml.DEPENDENCY"
+        android:value="object,ocr,face,label,icr,bcr,imgseg" /> <!-- add authorization of camera -->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 使用特性 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat"
+        tools:replace="android:allowBackup">
+        <activity android:name="com.huawei.mlkit.App.DefinedActivity"></activity>
+        <activity android:name="com.huawei.mlkit.App.GenerateCodeActivity"></activity>
+        <activity
+            android:name="com.huawei.mlkit.App.document.ImageDocumentAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.huawei.mlkit.App.object.LiveObjectAnalyseActivity" />
+        <activity
+            android:name="com.huawei.mlkit.App.face.StillFaceAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.mlkit.App.classification.ImageClassificationAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.mlkit.App.text.ImageTextAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.huawei.mlkit.App.face.LiveFaceAnalyseActivity" />
+        <activity
+            android:name="com.huawei.mlkit.App.translate.TranslatorActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.huawei.mlkit.App.imgseg.ImageSegmentationLiveAnalyseActivity" />
+        <activity
+            android:name="com.huawei.mlkit.App.imgseg.ImageSegmentationStillAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.mlkit.App.tts.TtsAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.mlkit.App.IDCard.IcrAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.mlkit.App.bankCard.BcrAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.mlkit.App.generalCard.GcrAnalyseActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
+        <activity
+            android:name="com.huawei.mlkit.App.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
